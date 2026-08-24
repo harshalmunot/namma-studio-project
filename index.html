@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Studio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bitcount+Prop+Single:wght@100..900&family=Sekuya&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        height: 100vh;
+        margin: 0;
+        background-color: lightgray;
+        transition: all 1.5s;
+        overflow: hidden;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .head {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .head p {
+        padding-right: 100px;
+        font-family: "Bitcount Prop Single", system-ui;
+        font-size: 25px;
+        font-weight: bold;
+        font-style: normal;
+      }
+
+      .cont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .cont p {
+        margin-top: 150px;
+        text-align: center;
+        font-size: 180px;
+        font-weight: bolder;
+        line-height: 0.75;
+      }
+
+      .sekuya-regular {
+        font-family: "Sekuya", system-ui;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      .bebas-neue-regular {
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      button {
+        background-color: rgba(240, 248, 255, 0);
+        border: none;
+        cursor: pointer;
+        font-family: "Bitcount Prop Single", system-ui;
+        font-size: larger;
+        font-weight: bold;
+        font-style: normal;
+        transition: all 1s;
+      }
+
+      .menu {
+        margin-right: 80px;
+      }
+
+      .video {
+        position: fixed;
+        border-radius: 50%;
+        pointer-events: none;
+      }
+      video {
+        height: 250px;
+        width: 250px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="head">
+        <p>STUDIO NAMMA</p>
+
+        <button class="dark">DARK MODE</button>
+      </div>
+
+      <div class="head">
+        <button class="menu">MENU</button>
+        <p>LET'S TALK</p>
+      </div>
+    </header>
+
+    <div class="video">
+      <video src="studioNamma_hover.mp4" autoplay loop></video>
+    </div>
+
+    <div class="cont">
+      <p>
+        WE THINK<br />
+        CRAFT AND<br />
+        DESIGN
+      </p>
+    </div>
+
+    <script>
+      const btn = document.querySelector(".dark");
+      const paragraphs = document.querySelectorAll("p");
+      const menu = document.querySelector(".menu");
+      const video = document.querySelector(".video");
+
+      btn.addEventListener("mouseover", () => {
+        document.body.style.backgroundColor = "black";
+
+        btn.innerHTML = "LIGHT MODE";
+        btn.style.color = "white";
+
+        paragraphs.forEach((p) => {
+          p.style.color = "white";
+        });
+
+        menu.style.color = "white";
+      });
+
+      btn.addEventListener("mouseout", () => {
+        document.body.style.backgroundColor = "lightgray";
+
+        btn.innerHTML = "DARK MODE";
+        btn.style.color = "black";
+
+        paragraphs.forEach((p) => {
+          p.style.color = "black";
+        });
+
+        menu.style.color = "black";
+      });
+
+      menu.addEventListener("mouseover", () => {
+        menu.innerHTML = "OPEN";
+      });
+
+      menu.addEventListener("mouseout", () => {
+        menu.innerHTML = "MENU";
+      });
+
+      document.addEventListener("mousemove", (e) => {
+        video.style.left = `${e.clientX}px`;
+        video.style.top = `${e.clientY}px`;
+      });
+    </script>
+  </body>
+</html>
