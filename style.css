@@ -1,0 +1,112 @@
+@font-face {
+    font-family: mixTape_light;
+    src: url(./fonts/679cbd779f2ae36caa619a62_GT\ Pressura\ Mono\ Light\ Web.ttf);
+}
+
+@font-face {
+    font-family: mixTape_regular;
+    src: url(./fonts/68cab20c0e1c2178793b353b_Mixtape-NormalRegular.otf);
+}
+
+@font-face {
+    font-family: mixTape_extra_bold;
+    src: url(./fonts//68396a14a9b4604f87fdbba4_MixtapeExtraCondensed-ExtraBold.otf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: mixTape_light;
+    background-color: #E4E4E4;
+}
+
+body{
+    overflow-x: hidden;
+    height: 200vh;
+}
+
+.nav-container{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    /* border: 2px solid red; */
+    display: flex;
+    background-color: transparent;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+}
+
+.nav-left-items{
+    /* border: 2px solid blue; */
+    display: flex;
+    justify-content: space-around;
+    gap: 10vw;
+    cursor: pointer;
+}
+.nav-right-items{
+    /* border: 2px solid blue; */
+    display: flex;
+    justify-content: space-around;
+    gap: 10vw;
+    cursor: pointer;
+}
+
+
+.hero-container{
+    height: 100vh;
+}
+
+.hero-text-content{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.hero-text-content p{
+    font-family: mixTape_extra_bold;
+    font-size: 10rem;
+    line-height: 0.8;
+}
+
+.cursor-follower-video-container{
+    position: absolute;
+    height: 350px;
+    width: 250px;
+    overflow: hidden;
+    border-radius: 10px;
+    object-fit: contain;
+    transform: translate(20%,10%);
+    transition: all linear 0.3s;
+    z-index: 1;
+}
+
+.second-page-container{
+    border: 1px solid blue;
+    position: relative;
+    height: 100vh;
+    padding: 20px;
+    margin-top: 20px;
+    z-index: 2;
+}
+
+.second-page-container iframe{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+}
+
+.video-container{
+    width: 100%;
+    height: 100%;
+
+    background-color: green;
+    overflow: hidden;
+    border-radius: 10px;
+}
