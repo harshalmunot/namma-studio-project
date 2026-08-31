@@ -175,3 +175,34 @@ playground_text.addEventListener("mouseleave",(e) =>{
     portfolio.style.left = `${e.clientX}px`
     portfolio.style.opacity = "0"
 })
+const titles = document.querySelectorAll(".services h1");
+const preview = document.getElementById("previewImg");
+const previewBox = document.querySelector(".preview");
+
+titles.forEach(title => {
+
+    title.addEventListener("mouseenter", () => {
+
+        titles.forEach(t => t.classList.remove("active"));
+        title.classList.add("active");
+
+        preview.style.opacity = "0";
+
+        setTimeout(() => {
+            preview.src = title.dataset.img;
+            preview.style.opacity = "0.5";
+        }, 180);
+
+    });
+
+});
+
+/* Premium mouse-follow effect */
+
+document.addEventListener("mousemove",(e)=>{
+
+    const x=(e.clientX-window.innerWidth/2)/40;
+    const y=(e.clientY-window.innerHeight/2)/40;
+
+    previewBox.style.transform=`translate(${x}px,${y}px)`;
+});
