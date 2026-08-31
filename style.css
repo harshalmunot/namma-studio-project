@@ -340,53 +340,77 @@ body.menu-open {
     width: 100%;
 }
 .hero{
-    display:flex;
-    justify-content:space-between;
+    display:grid;
+    grid-template-columns: minmax(220px, 320px) minmax(0, 1fr) minmax(90px, 140px);
     align-items:center;
     min-height:100vh;
-    padding:40px;
+    padding:40px 50px;
+    gap:2rem;
     overflow:hidden;
 }
-
-/* Left Image */
 
 .preview{
-    width:340px;
-    height:430px;
+    width:min(25vw, 340px);
+    height:min(38vw, 420px);
     overflow:hidden;
-    border-radius:10px;
+    border-radius:22px;
     position:relative;
+    opacity:0;
+    transform:translate3d(0, 18px, 0);
+    transition: opacity .25s ease, transform .25s ease;
+    pointer-events:none;
+    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.14);
 }
 
-.preview img{
+.preview.is-visible{
+    opacity:1;
+}
+
+.preview video{
     width:100%;
-    height:50%;
+    height:100%;
     object-fit:cover;
-    transition:
-        opacity .35s ease,
-        transform .35s ease;
+    display:block;
+    background:#f2f2f2;
 }
 
-/* Right Text */
-    
 .services{
     display:flex;
     flex-direction:column;
     align-items:center;
+    justify-content:center;
+    text-align:center;
+    width:100%;
 }
 
 .services h1{
-    font-size:6rem;
-    font-weight:900;
+    font-size: clamp(3.1rem, 5vw, 7rem);
+    font-weight: 900;
     font-family: mixTape_extra_bold;
-    line-height:.9;
-    color:#928989;
-    cursor:pointer;
-    transition:color .3s ease, transform .25s ease;
+    line-height: .82;
+    letter-spacing: -0.07em;
+    color: #928989;
+    cursor: pointer;
+    margin: 0;
+    transition: color .3s ease, transform .25s ease;
 }
 
 .services h1:hover,
 .services h1.active{
-    color:#000;
-    transform:scale(1.03);
+    color: #000;
+    transform: scale(1.02);
+}
+
+.side-text{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#111;
+    font-size: .8rem;
+    font-family: mixTape_extra_bold;
+    letter-spacing: .28rem;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-align:center;
+    opacity: .8;
 }
