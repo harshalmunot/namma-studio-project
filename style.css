@@ -1,29 +1,30 @@
 @font-face {
-    font-family: mixTape_light;
-    src: url(./fonts/679cbd779f2ae36caa619a62_GT\ Pressura\ Mono\ Light\ Web.ttf);
+    font-family: "mixTape_light";
+    src: url("./fonts/679cbd779f2ae36caa619a62_GT\ Pressura\ Mono\ Light\ Web.ttf");
 }
 
 @font-face {
-    font-family: mixTape_regular;
-    src: url(./fonts/68cab20c0e1c2178793b353b_Mixtape-NormalRegular.otf);
+    font-family: "mixTape_regular";
+    src: url("./fonts/68cab20c0e1c2178793b353b_Mixtape-NormalRegular.otf");
 }
 
 @font-face {
-    font-family: mixTape_extra_bold;
-    src: url(./fonts//68396a14a9b4604f87fdbba4_MixtapeExtraCondensed-ExtraBold.otf);
+    font-family: "mixTape_extra_bold";
+    src: url("./fonts/68396a14a9b4604f87fdbba4_MixtapeExtraCondensed-ExtraBold.otf");
 }
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: mixTape_light;
-    background-color: #E4E4E4;
+    font-family: mixTape_extra_bold;
+    
 }
 
-body{
+body {
     overflow-x: hidden;
     height: 200vh;
+    background-color: #E4E4E4;
 }
 
 .nav-container{
@@ -31,23 +32,22 @@ body{
     width: 100%;
     left: 0;
     top: 0;
-    /* border: 2px solid red; */
+    z-index: 10;
     display: flex;
     background-color: transparent;
     justify-content: space-between;
     align-items: center;
     padding: 12px;
 }
-
 .nav-left-items{
-    /* border: 2px solid blue; */
+    
     display: flex;
     justify-content: space-around;
     gap: 10vw;
     cursor: pointer;
 }
 .nav-right-items{
-    /* border: 2px solid blue; */
+   
     display: flex;
     justify-content: space-around;
     gap: 10vw;
@@ -69,7 +69,7 @@ body{
 }
 
 .hero-text-content p{
-    font-family: mixTape_extra_bold;
+    font-family: mixTape_extra_bold ;
     font-size: 10rem;
     line-height: 0.8;
 }
@@ -109,4 +109,22 @@ body{
     background-color: green;
     overflow: hidden;
     border-radius: 10px;
+}
+
+
+
+.container-main {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+
+    font-weight: 100;
+    font-family: mixTape_extra_bold;
+    font-size: xx-large;
+    gap: 600px;
+    background-color: #E4E4E4;
 }
