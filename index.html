@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<body>
+<body id ="body">
+  <div id="cursor"></div>
+
     <!-- Navbar -->
     <div class="nav-container">
         <div class="nav-left-items">
@@ -131,8 +133,8 @@
                     <span class="image-stack">
                         <img 
                             class="stack-image" 
-                            src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/68d14384e95f535d6ce77d4f_Details3.webp"       
-                             alt=""
+                            src="https://images.unsplash.com/photo-1742745181459-815e9815ac05?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8Q0R3dXdYSkFiRXd8fGVufDB8fHx8fA%3D%3D" 
+                            alt=""
                         >
                         <img 
                             class="stack-image" 
@@ -157,9 +159,9 @@
 
 
     <!-- Playground section -->
-         <div class="playground-section">
+     <div class="playground-section">
         <div class="playground-text">
-            PLAYGROUND  
+            PLAYGROUND
         </div>
         <p id="portfolio">PORTFOLIO</p>
      </div>
@@ -198,6 +200,33 @@
     <div class="side-text">WIREFRAMES</div>
 
 </div>
+
+    <!-- Contact and project preview section -->
+    <section class="contact-section">
+        <div class="client-logos" aria-label="Selected clients">
+            <span class="logo-qonto">Qonto</span>
+            <span class="logo-matera">matera</span>
+            <span class="logo-chance">CHANCE</span>
+            <span class="logo-silvr">SILVR</span>
+            <span class="logo-alan">alan</span>
+        </div>
+
+        <div class="contact-content">
+            <h2>LET'S WORK<br><span>TOGETHER</span></h2>
+            <div class="contact-copy">
+                <p>Work with us if average isn't your thing.<br>Drop it, we'll build it!</p>
+                <a href="mailto:hello@studionamma.com">SAY HELLO <span aria-hidden="true">&#8594;</span></a>
+            </div>
+        </div>
+
+        <div class="contact-projects" aria-label="Selected projects">
+            <img src="https://cdn.prod.website-files.com/67aca0c732855fc2a1f2c4fc/68bb0be00336912e360b324f_main%20case%20cover%20matera%20(1).webp" alt="Matera project">
+            <video src="https://studionamma.vercel.app/videos/chance/chance-cover.mp4" autoplay loop muted playsinline></video>
+            <video src="https://studionamma.vercel.app/videos/intramuros/intramuros-highlight.mp4" autoplay loop muted playsinline></video>
+            <video src="https://studionamma.vercel.app/videos/silvr/silvr-highlight.mp4" autoplay loop muted playsinline></video>
+        </div>
+    </section>
+
     <script src="script.js"></script>
 </body>
 </html>

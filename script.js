@@ -175,39 +175,44 @@ playground_text.addEventListener("mouseleave",(e) =>{
     portfolio.style.left = `${e.clientX}px`
     portfolio.style.opacity = "0"
 })
-const titleEls = document.querySelectorAll(".services h1");
+
+let g = document.getElementById("cursor")
+document.addEventListener("mousemove",function(dets){
+    g.style.left = dets.clientX +"px";
+    g.style.top = dets.clientY +"px";
+})
+
+const titles = document.querySelectorAll(".services h1");
 const previewBox = document.querySelector(".preview");
-const previewVideo = previewBox ? previewBox.querySelector("video") : null;
+const preview = previewBox.querySelector("video");
 
-if (previewBox && previewVideo) {
-    titleEls.forEach((title) => {
-        const setActive = () => {
-            titleEls.forEach((item) => item.classList.toggle("active", item === title));
-        };
+titles.forEach(title => {
 
-        title.addEventListener("mouseenter", () => {
-            setActive();
+    title.addEventListener("mouseenter", () => {
 
-            const source = title.dataset.video;
-            if (!source) return;
+        titles.forEach(t => t.classList.remove("active"));
+        title.classList.add("active");
 
-            previewVideo.src = source;
-            previewVideo.load();
-            previewBox.classList.add("is-visible");
-            previewVideo.play().catch(() => {});
-        });
-
-        title.addEventListener("mouseleave", () => {
-            title.classList.remove("active");
-            previewBox.classList.remove("is-visible");
-            previewVideo.pause();
-            previewVideo.currentTime = 0;
-        });
+        preview.src = title.dataset.video;
+        preview.load();
+        previewBox.classList.add("is-visible");
+        preview.play().catch(() => {});
     });
 
-    document.addEventListener("mousemove", (e) => {
-        const x = (e.clientX - window.innerWidth / 2) / 40;
-        const y = (e.clientY - window.innerHeight / 2) / 40;
-        previewBox.style.transform = `translate(${x}px, ${y}px)`;
+    title.addEventListener("mouseleave", () => {
+        title.classList.remove("active");
+        previewBox.classList.remove("is-visible");
+        preview.pause();
     });
-}
+
+});
+
+/* Premium mouse-follow effect */
+
+document.addEventListener("mousemove",(e)=>{
+
+    const x=(e.clientX-window.innerWidth/2)/40;
+    const y=(e.clientY-window.innerHeight/2)/40;
+
+    previewBox.style.transform=`translate(${x}px,${y}px)`;
+});
